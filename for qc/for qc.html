@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>曲畅的生日祝福</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        #login, #main {
+            display: none;
+        }
+        #login {
+            background-color: #ffb6c1; /* 粉色背景 */
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+        .input-field {
+            margin: 10px;
+        }
+        .input-field input {
+            width: 80%;
+            padding: 8px;
+            font-size: 1em;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            margin-top: 10px;
+        }
+        #main {
+            text-align: center;
+            background: url('castle_background.jpg') no-repeat center center; /* 替换为粉色城堡背景图 */
+            background-size: cover;
+            padding: 20px;
+            border-radius: 8px;
+            color: #333; /* 设置为较深的颜色，保证在浅色背景上清晰 */
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .happy-birthday {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 3em; /* 调整字体大小 */
+            color: #ffdd59; /* 金黄色调 */
+            margin-top: 10px;
+        }
+        .image-container, .video-container {
+            width: 80%;
+            margin: auto;
+        }
+        .image-container img, .video-container video {
+            width: 100%;
+            border-radius: 5px;
+        }
+        /* 烟花效果 */
+        @keyframes fireworks {
+            0% { opacity: 1; transform: scale(0.1); }
+            100% { opacity: 0; transform: scale(1.5); }
+        }
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffdd59;
+            border-radius: 50%;
+            animation: fireworks 1.5s ease-out infinite;
+        }
+    </style>
+</head>
+<body>
+
+<div id="login" class="container">
+    <h2>登录页面</h2>
+    <div class="input-field">
+        <input type="text" placeholder="姓名" id="name">
+    </div>
+    <div class="input-field">
+        <input type="password" placeholder="密码" id="password">
+    </div>
+    <button class="button" onclick="openBlessing()">打开斌老师的祝福</button>
+    <div class="firework" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+    <div class="firework" style="top: 20%; left: 70%; animation-delay: 0.3s;"></div>
+    <div class="firework" style="top: 40%; left: 50%; animation-delay: 0.5s;"></div>
+    <div class="firework" style="top: 70%; left: 30%; animation-delay: 0.7s;"></div>
+</div>
+
+<div id="main" class="container">
+    <div class="section">
+        <h2>🎉 隆重祝贺无敌熬夜大王曲畅师姐18岁生日快乐 🎉</h2>
+        <div class="happy-birthday">Happy Birthday</div> <!-- 圆体的Happy Birthday -->
+    </div>
+    <div class="section">
+        <p>祝福的话：<br>哈喽，曲畅老师，真的非常高兴认识你。真的很开兴身边有你这样这样优秀且向上的朋友</p>
+        <br>虽然你有些时候挺让人难绷，咳咳，开玩笑了哈哈</p>
+        <br>希望你永远开心快乐，永远不似。永远18岁，越来越年轻</p>
+
+    </div>
+  <div class="section image-container">
+    <h3>我们有很多充满回忆的表情包</h3>
+    <p>下面是军火展示</p>
+    <!-- 这里是原来没有 width 的 img 标签，给每个图片加上 width -->
+    <img src="爱提问的小朋友.png" alt="爱提问的小朋友" width="55">
+    <img src="不挑食.png" alt="不挑食" width="25">
+    <img src="厕所双排.png" alt="厕所双排" width="55">
+    <img src="倒立的女人.png" alt="倒立的女人" width="55">
+    <img src="粉色贱猫.png" alt="粉色贱猫" width="55">
+    <img src="感同身受.png" alt="感同身受" width="40">
+    <img src="身体差.png" alt="身体差" width="25">
+    <img src="帅哥.png" alt="帅哥" width="55">
+    <img src="傻笑.png" alt="傻笑" width="55">
+</div>
+
+    <div class="section video-container">
+        <p>（技术没跟上，不会缩图嘻嘻)</p>
+        <h3>王俊凯祝你生日快乐</h3>
+        <video controls>
+            <source src="idol_video.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+    </div>
+</div>
+
+<script>
+    function openBlessing() {
+        let name = document.getElementById("name").value;
+        let password = document.getElementById("password").value;
+        if (name === "曲畅" && password === "1025") {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("main").style.display = "block";
+        } else {
+            alert("请输入正确的姓名和密码！");
+        }
+    }
+
+    window.onload = () => {
+        document.getElementById("login").style.display = "block";
+    };
+</script>
+
+</body>
+</html>
